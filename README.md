@@ -32,12 +32,12 @@ The interpreter will not allow you to step beyond the margins of code, so if the
 and at line 8 you try to run the command "step 3", the interpreter will return an error. Importantly,
 the step command will ignore empty lines of code, so:  
 def x : 2  
+def y : 1  
 step 2  
 
 out x  
-inc x  
-out x  
-will output only out 3.
+out y  
+will output only y.
 
 
 The "cmp" command compares two variables to each other, if they are equal the next line executes,
