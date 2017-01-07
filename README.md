@@ -6,7 +6,7 @@ The purpose of this project was to create a truly minimal programming language i
 functionality can easily be replicated in other programming languages.
 
 
-The syntax is very simple and is influenced by assembly code syntax to a degree, the commands are:
+The syntax is very simple and is influenced by assembly code to a degree, the commands are:
 "def, step, cmp, inc, dec, out, end".
 
 
@@ -24,7 +24,6 @@ step 3
 def x : 3  
 def x : 2  
 def x : 1
-
 would mean that the "def x : 3" & "def x : 2" lines would be skipped (or stepped over if you will).
 The step instruction also allows going backwards in code, this is done by using negative integers
 it would look something like this:  
@@ -35,7 +34,7 @@ be aware of the potential for infinite loops.
 
 
 The "cmp" command compares two variables to each other, if they are equal the next line executes,
-other wise the next line is skipped, so:  
+otherwise the next line is skipped, so:  
 cmp 3 : x  
 def y : 2  
 def z : 1  
@@ -43,7 +42,7 @@ if x is equal to 3 then the "def y : 2" line will be interpreted otherwise the i
 to the next line. The comparison also applies to strings and etc.
 
 
-The "inc" and "dec" increment or decrement the give variable by one respectively, so:  
+The "inc" and "dec" increment or decrement the given variable by one respectively, so:  
 def x : 1  
 inc x  
 would increment the variable x by 1.  
@@ -53,9 +52,9 @@ would decrement the variable x by 1.
 The commands also work on foats.
 
 
-The "out" command the specified output and/or variables, so:  
+The "out" command outputs the specified strings and/or variables, so:  
 out "Hi!"  
-would output the string "Hi!", you can also intermix wariables and strings together, like this:  
+would output the string "Hi!", you can also intermix variables and strings together, like this:  
 def x : "word2"  
 out "word1" x "word2"  
 would output "word1word2word3". You can also use next line "\n" or tab "\t", like so:  
@@ -65,7 +64,7 @@ out "top" \n "bottom"
 would print out:  
 top  
 bottom  
-Using the command alone without any arguments, will simply print out a empty line.
+Using the command alone without any arguments, will simply print out an empty line.
 
 
 The "end" command will stop the interpreter, its purpose is to end  
@@ -76,4 +75,4 @@ end
 out x \n  
 inc x  
 step -4  
-will output the numbers 0 to 9, if not for the "end" command this would loop forever.
+will output the numbers 0 to 9. If not for the "end" command this would loop forever.
