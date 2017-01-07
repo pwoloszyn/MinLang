@@ -29,8 +29,15 @@ The step instruction also allows going backwards in code, this is done by using 
 it would look something like this:  
 step -3  
 The interpreter will not allow you to step beyond the margins of code, so if the code is 10 lines
-and at line 8 you try to run the command "step 3", the interpreter will return an error. Also
-be aware of the potential for infinite loops.
+and at line 8 you try to run the command "step 3", the interpreter will return an error. Importantly,
+the step command will ignore empty lines of code, so:  
+def x : 2  
+step 2  
+
+out x  
+inc x  
+out x  
+will output only out 3.
 
 
 The "cmp" command compares two variables to each other, if they are equal the next line executes,
